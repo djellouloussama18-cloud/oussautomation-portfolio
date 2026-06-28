@@ -1457,58 +1457,82 @@
         padding-top: 72px;
       }
 
+      /* Hero section wrapper */
+      .hero-section,
+      section[id="hero"] {
+        padding: 80px 16px 40px !important;
+        min-height: 100vh !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+      }
+
+      /* Two column row */
+      .hero-grid,
       .hero-container,
       .hero-content,
-      [class*="hero"] > div {
-        display: flex !important;
-        flex-direction: row !important;
+      .hero-inner {
+        display: grid !important;
+        grid-template-columns: 140px 1fr !important;
+        gap: 20px !important;
         align-items: center !important;
-        gap: 16px !important;
+        width: 100% !important;
       }
 
+      /* Portrait image */
       .hero-portrait {
         width: 140px !important;
-        min-width: 140px !important;
-        height: auto !important;
-        flex-shrink: 0 !important;
+        height: 180px !important;
+        object-fit: cover !important;
+        object-position: top center !important;
+        display: block !important;
+        position: static !important;
+        z-index: auto !important;
       }
 
+      /* Text column */
       .hero-text,
+      .hero-heading-wrapper,
+      .hero-titles {
+        position: static !important;
+        z-index: auto !important;
+        text-align: left !important;
+      }
+
+      /* Heading font size */
       .hero-heading,
-      [class*="hero-title"] {
-        font-size: clamp(24px, 7vw, 36px) !important;
+      .hero-title,
+      h1[class*="hero"] {
+        font-size: clamp(20px, 6vw, 28px) !important;
+        line-height: 1.2 !important;
+        white-space: normal !important;
       }
 
-      .hero-label {
-        font-size: 10px !important;
-      }
-
-      .hero-accent {
-        font-size: clamp(14px, 4vw, 20px) !important;
-      }
-
-      .hero-left {
-        flex: 0 0 50%;
-        max-width: 50%;
-      }
-
+      /* Swap grid order: image (hero-right) -> col 1, text (hero-left) -> col 2 */
       .hero-right {
-        flex: 0 0 50%;
-        max-width: 50%;
-        justify-content: center;
+        grid-column: 1 !important;
+      }
+      .hero-left {
+        grid-column: 2 !important;
       }
 
+      /* Neutralize portrait-wrap absolute positioning on mobile */
       .hero-portrait-wrap {
-        margin-bottom: 0;
-        width: 100%;
+        position: static !important;
       }
-
       .hero-portrait-wrap::after {
-        max-width: 180px;
+        display: none !important;
       }
 
-      :root {
-        --portrait-float-y: -5px;
+      /* Gold accent line */
+      .hero-accent {
+        font-size: clamp(12px, 3.5vw, 16px) !important;
+      }
+
+      /* Hero label */
+      .hero-label {
+        font-size: 9px !important;
+        letter-spacing: 0.08em !important;
       }
 
       .scroll-indicator {
