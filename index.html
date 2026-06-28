@@ -1467,17 +1467,38 @@
         text-align: center !important;
       }
 
+      /* Force image wrapper to be FIRST in flex column */
+      .hero-right {
+        order: -1 !important;
+      }
+
       .hero-portrait {
-        width: 180px !important;
-        height: auto !important;
-        margin: 0 auto 24px !important;
+        width: 100% !important;
+        max-width: 280px !important;
+        height: 340px !important;
+        object-fit: cover !important;
+        object-position: top center !important;
+        margin: 0 auto !important;
+        position: static !important;
+        -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%) !important;
+        mask-image: linear-gradient(to bottom, black 50%, transparent 100%) !important;
+        animation: heroImageEntry 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s both,
+                   heroFloat 5s ease-in-out 1.6s infinite !important;
+      }
+
+      .hero-portrait-wrap {
+        animation: glowPulse 4s ease-in-out infinite !important;
+        border-radius: 4px !important;
         position: static !important;
       }
 
+      .hero-portrait-wrap::after {
+        display: none !important;
+      }
+
       .hero-heading,
-      .hero-title,
-      h1[class*="hero"] {
-        font-size: clamp(32px, 9vw, 48px) !important;
+      .hero-title {
+        font-size: clamp(30px, 9vw, 44px) !important;
         text-align: center !important;
       }
 
@@ -1489,6 +1510,29 @@
       .hero-label {
         font-size: 10px !important;
         text-align: center !important;
+      }
+
+      @keyframes heroImageEntry {
+        0% {
+          opacity: 0;
+          transform: translateY(-30px) scale(0.95);
+          filter: blur(8px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+          filter: blur(0);
+        }
+      }
+
+      @keyframes heroFloat {
+        0%, 100% { transform: translateY(0px); }
+        50%       { transform: translateY(-10px); }
+      }
+
+      @keyframes glowPulse {
+        0%, 100% { box-shadow: 0 0 30px rgba(201, 169, 110, 0.1); }
+        50%      { box-shadow: 0 0 60px rgba(201, 169, 110, 0.25); }
       }
 
       .scroll-indicator {
