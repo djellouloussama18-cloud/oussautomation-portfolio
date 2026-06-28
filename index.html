@@ -1457,54 +1457,58 @@
         padding-top: 72px;
       }
 
-      .hero-content {
-        flex-direction: column-reverse;
-        text-align: center;
+      .hero-container,
+      .hero-content,
+      [class*="hero"] > div {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 16px !important;
       }
 
-      .hero-left,
-      .hero-right {
-        flex: 0 0 100%;
-        max-width: 100%;
+      .hero-portrait {
+        width: 140px !important;
+        min-width: 140px !important;
+        height: auto !important;
+        flex-shrink: 0 !important;
+      }
+
+      .hero-text,
+      .hero-heading,
+      [class*="hero-title"] {
+        font-size: clamp(24px, 7vw, 36px) !important;
+      }
+
+      .hero-label {
+        font-size: 10px !important;
+      }
+
+      .hero-accent {
+        font-size: clamp(14px, 4vw, 20px) !important;
+      }
+
+      .hero-left {
+        flex: 0 0 50%;
+        max-width: 50%;
       }
 
       .hero-right {
+        flex: 0 0 50%;
+        max-width: 50%;
         justify-content: center;
       }
 
       .hero-portrait-wrap {
-        margin-bottom: 24px;
+        margin-bottom: 0;
+        width: 100%;
       }
 
       .hero-portrait-wrap::after {
-        max-width: 220px;
-      }
-
-      .hero-portrait {
-        width: 180px;
         max-width: 180px;
-        max-height: none;
-        margin: 0 auto;
       }
 
       :root {
         --portrait-float-y: -5px;
-      }
-
-      .hero-label {
-        font-size: 11px;
-        text-align: center;
-        margin-bottom: 24px;
-      }
-
-      .hero-heading h1 {
-        font-size: clamp(36px, 10vw, 60px);
-        text-align: center;
-      }
-
-      .hero-accent {
-        font-size: clamp(20px, 6vw, 32px);
-        text-align: center;
       }
 
       .scroll-indicator {
@@ -2183,7 +2187,7 @@
       </div>
       <div class="testimonials-grid">
         <div class="testimonial-card reveal">
-          <div class="testimonial-stars">â˜…â˜…â˜…â˜…â˜…</div>
+          <div class="testimonial-stars">★★★★★</div>
           <p class="testimonial-quote" data-i18n="t1_text">"Working with Oussama was more than just hiring an automation
             expert — it felt like bringing on a technical partner who truly understood our goals. He took our manual
             chaos, added clarity, and transformed it into something that not only worked flawlessly but scaled beyond
@@ -2192,7 +2196,7 @@
           <p class="testimonial-role">Founder, OscarShop</p>
         </div>
         <div class="testimonial-card reveal reveal-delay-1">
-          <div class="testimonial-stars">â˜…â˜…â˜…â˜…â˜…</div>
+          <div class="testimonial-stars">★★★★★</div>
           <p class="testimonial-quote" data-i18n="t2_text">"Oussama approaches every project with a deep sense of
             purpose. His work is never just about the surface — it's about how each automation functions, connects, and
             flows. He brings logic, sharpness, and confidence to every decision, and his build quality is exceptional."
@@ -2307,40 +2311,40 @@
                   <div class="custom-select-options">
                     <div class="option" data-value="">Select a service...</div>
                     <div class="option" data-value="AI Chatbot & Automation">
-                      <span class="opt-icon">â—ˆ</span> AI Chatbot & Automation
+                      <span class="opt-icon">◈</span> AI Chatbot & Automation
                     </div>
                     <div class="option" data-value="n8n Workflow Development">
-                      <span class="opt-icon">â—ˆ</span> n8n Workflow Development
+                      <span class="opt-icon">◈</span> n8n Workflow Development
                     </div>
                     <div class="option" data-value="WhatsApp / Instagram Agent">
-                      <span class="opt-icon">â—ˆ</span> WhatsApp / Instagram Agent
+                      <span class="opt-icon">◈</span> WhatsApp / Instagram Agent
                     </div>
                     <div class="option" data-value="E-commerce Store">
-                      <span class="opt-icon">â—ˆ</span> E-commerce Store
+                      <span class="opt-icon">◈</span> E-commerce Store
                     </div>
                     <div class="option" data-value="SaaS System Development">
-                      <span class="opt-icon">â—ˆ</span> SaaS System Development
+                      <span class="opt-icon">◈</span> SaaS System Development
                     </div>
                     <div class="option" data-value="Lead Generation System">
-                      <span class="opt-icon">â—ˆ</span> Lead Generation System
+                      <span class="opt-icon">◈</span> Lead Generation System
                     </div>
                     <div class="option" data-value="Store Management System">
-                      <span class="opt-icon">â—ˆ</span> Store Management System
+                      <span class="opt-icon">◈</span> Store Management System
                     </div>
                     <div class="option" data-value="Website Development">
-                      <span class="opt-icon">â—ˆ</span> Website Development
+                      <span class="opt-icon">◈</span> Website Development
                     </div>
                     <div class="option" data-value="Portfolio Website">
-                      <span class="opt-icon">â—ˆ</span> Portfolio Website
+                      <span class="opt-icon">◈</span> Portfolio Website
                     </div>
                     <div class="option" data-value="Vision AI Processing">
-                      <span class="opt-icon">â—ˆ</span> Vision AI Processing
+                      <span class="opt-icon">◈</span> Vision AI Processing
                     </div>
                     <div class="option" data-value="Voice Agent">
-                      <span class="opt-icon">â—ˆ</span> Voice Agent
+                      <span class="opt-icon">◈</span> Voice Agent
                     </div>
                     <div class="option" data-value="Other">
-                      <span class="opt-icon">â—ˆ</span> Other
+                      <span class="opt-icon">◈</span> Other
                     </div>
                   </div>
                   <input type="hidden" id="contact-service" name="service">
@@ -2737,21 +2741,21 @@ ${message}
   <div id="hero-ticker">
     <div id="hero-ticker-inner">
       <span>20+ CLIENTS WORLDWIDE</span>
-      <span class="dot">â—†</span>
+      <span class="dot">•</span>
       <span>50+ WORKFLOWS DEPLOYED</span>
-      <span class="dot">â—†</span>
+      <span class="dot">•</span>
       <span>3 CONTINENTS SERVED</span>
-      <span class="dot">â—†</span>
+      <span class="dot">•</span>
       <span>24/7 AUTOMATION RUNNING</span>
-      <span class="dot">â—†</span>
+      <span class="dot">•</span>
       <span>20+ CLIENTS WORLDWIDE</span>
-      <span class="dot">â—†</span>
+      <span class="dot">•</span>
       <span>50+ WORKFLOWS DEPLOYED</span>
-      <span class="dot">â—†</span>
+      <span class="dot">•</span>
       <span>3 CONTINENTS SERVED</span>
-      <span class="dot">â—†</span>
+      <span class="dot">•</span>
       <span>24/7 AUTOMATION RUNNING</span>
-      <span class="dot">â—†</span>
+      <span class="dot">•</span>
     </div>
   </div>
 </body>
