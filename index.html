@@ -1457,82 +1457,38 @@
         padding-top: 72px;
       }
 
-      /* Hero section wrapper */
-      .hero-section,
-      section[id="hero"] {
-        padding: 80px 16px 40px !important;
-        min-height: 100vh !important;
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: center !important;
-      }
-
-      /* Two column row */
       .hero-grid,
       .hero-container,
       .hero-content,
       .hero-inner {
-        display: grid !important;
-        grid-template-columns: 140px 1fr !important;
-        gap: 20px !important;
+        display: flex !important;
+        flex-direction: column !important;
         align-items: center !important;
-        width: 100% !important;
+        text-align: center !important;
       }
 
-      /* Portrait image */
       .hero-portrait {
-        width: 140px !important;
-        height: 180px !important;
-        object-fit: cover !important;
-        object-position: top center !important;
-        display: block !important;
+        width: 180px !important;
+        height: auto !important;
+        margin: 0 auto 24px !important;
         position: static !important;
-        z-index: auto !important;
       }
 
-      /* Text column */
-      .hero-text,
-      .hero-heading-wrapper,
-      .hero-titles {
-        position: static !important;
-        z-index: auto !important;
-        text-align: left !important;
-      }
-
-      /* Heading font size */
       .hero-heading,
       .hero-title,
       h1[class*="hero"] {
-        font-size: clamp(20px, 6vw, 28px) !important;
-        line-height: 1.2 !important;
-        white-space: normal !important;
+        font-size: clamp(32px, 9vw, 48px) !important;
+        text-align: center !important;
       }
 
-      /* Swap grid order: image (hero-right) -> col 1, text (hero-left) -> col 2 */
-      .hero-right {
-        grid-column: 1 !important;
-      }
-      .hero-left {
-        grid-column: 2 !important;
-      }
-
-      /* Neutralize portrait-wrap absolute positioning on mobile */
-      .hero-portrait-wrap {
-        position: static !important;
-      }
-      .hero-portrait-wrap::after {
-        display: none !important;
-      }
-
-      /* Gold accent line */
       .hero-accent {
-        font-size: clamp(12px, 3.5vw, 16px) !important;
+        font-size: clamp(16px, 5vw, 22px) !important;
+        text-align: center !important;
       }
 
-      /* Hero label */
       .hero-label {
-        font-size: 9px !important;
-        letter-spacing: 0.08em !important;
+        font-size: 10px !important;
+        text-align: center !important;
       }
 
       .scroll-indicator {
